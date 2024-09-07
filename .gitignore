@@ -1,0 +1,4 @@
+# Docker fayllari
+docker-compose.override.yml
+docker-compose.yml
+docker-compose.*

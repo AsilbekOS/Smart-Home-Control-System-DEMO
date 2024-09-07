@@ -1,0 +1,20 @@
+2024/08/01 11:43:32 ERROR: GET: Serverdan ma'lumot olishda xatolik...
+2024/08/01 11:50:30 Token kiritishingiz lozim
+2024/08/01 11:52:18 Token kiritishingiz lozim
+2024/08/01 11:53:38 Token kiritishingiz lozim
+2024/08/01 11:54:41 ERROR: GET: Serverdan ma'lumot olishda xatolik...
+2024/08/01 12:11:07 AddDeviceApi ERROR: POST: Serverdan ma'lumot olishda xatolik... rpc error: code = Unavailable desc = error reading from server: EOF
+2024/08/01 13:28:34 UpdateDeviceApi ERROR: POST: Serverdan ma'lumot olishda xatolik... rpc error: code = Unknown desc = UpdateDevice ERROR: Bunday DeviceID topilamdi: mongo: no documents in result
+2024/08/01 13:29:09 UpdateDeviceApi ERROR: POST: Serverdan ma'lumot olishda xatolik... rpc error: code = Unknown desc = UpdateDevice ERROR: Bunday DeviceID topilamdi: mongo: no documents in result
+2024/08/01 14:14:39 UpdateDeviceApi ERROR: POST: Serverdan ma'lumot olishda xatolik... rpc error: code = Unknown desc = UpdateDevice ERROR: Bunday DeviceID topilamdi: mongo: no documents in result
+2024/08/01 14:15:39 UpdateDeviceApi ERROR: rpc error: code = Unknown desc = UpdateDevice ERROR: Bunday DeviceID topilamdi: mongo: no documents in result
+2024/08/01 14:16:36 UpdateDeviceApi ERROR: rpc error: code = Unknown desc = UpdateDevice ERROR: Bunday DeviceID topilamdi: mongo: no documents in result
+2024/08/01 14:23:28 UpdateDeviceApi ERROR: rpc error: code = Unknown desc = UpdateDevice ERROR: Bunday DeviceID topilamdi: mongo: no documents in result
+2024/08/01 14:31:46 UpdateDeviceApi ERROR: rpc error: code = Unknown desc = UpdateDevice ERROR: Bunday DeviceID topilamdi: mongo: no documents in result
+2024/08/01 15:32:52 UpdateDeviceApi ERROR: rpc error: code = Unknown desc = UpdateDevice ERROR: Bunday DeviceID topilamdi: mongo: no documents in result
+2024/08/01 18:20:56 SendControlCommand ERROR: rpc error: code = Unimplemented desc = method SendControlCommand not implemented
+2024/08/01 18:22:51 SendControlCommand ERROR: rpc error: code = Unimplemented desc = method SendControlCommand not implemented
+2024/08/01 18:38:15 SendControlCommand ERROR: rpc error: code = Unimplemented desc = method SendControlCommand not implemented
+2024/08/01 18:40:44 SendControlCommand ERROR: rpc error: code = Unimplemented desc = method SendControlCommand not implemented
+2024/08/01 20:15:50 SendControlCommand ERROR: rpc error: code = Unimplemented desc = method SendControlCommand not implemented
+2024/08/01 20:19:54 SendControlCommand ERROR: rpc error: code = Unimplemented desc = method SendControlCommand not implemented

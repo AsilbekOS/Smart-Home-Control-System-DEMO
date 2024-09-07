@@ -1,0 +1,7 @@
+2024/08/01 09:19:19 RegisterUser INFO: Working:
+2024/08/01 09:19:19 LoginUser INFO: Succecc returned
+2024/08/01 09:35:33 LoginUser INFO: Succecc returned
+2024/08/01 11:43:32 GetUserProfile ERROR: invalid token
+2024/08/01 11:54:41 GetUserProfile ERROR: invalid token
+2024/08/01 11:57:57 GetUserProfile INFO: Succecc returned
+2024/08/01 11:59:19 GetUserProfile INFO: Succecc returned

@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+service DeviceControlService {
+    rpc AddDevice(AddDeviceRequest) returns (AddDeviceResponse);
+    rpc UpdateDevice(UpdateDeviceRequest) returns (UpdateDeviceResponse);
+    rpc DeleteDevice(DeleteDeviceRequest) returns (DeleteDeviceResponse);
+    rpc SendControlCommand(ControlRequest) returns (ControlResponse);
+}
+
+message Device {
+    string device_id = 1;
+    string user_id = 2;
+    string device_type = 3;
+    string device_name = 4;
+    string device_status = 5;
+    Configuration configuration = 6;
+    string last_updated = 7;
+    string location = 8;
+    string firmware_version = 9;
+    string connectivity_status = 10;
+    string token = 11;
+  }
+
+message Configuration {
+    int32 brightness = 1;
+    string color = 2;
+  }
+  
+message ControlCommand {
+    string command_id = 1;
+    string device_id = 2;
+    string user_id = 3;
+    string command_type = 4;
+    BrightnessCommandPayload command_payload = 5;
+    string timestamp = 6;
+    string device_status = 7;
+}
+    
+message BrightnessCommandPayload {
+    int32 brightness = 1;
+    string color = 2;
+}
+    
+  
+message AddDeviceRequest {
+    Device device = 1;
+}
+  
+message AddDeviceResponse {
+    string success = 1;
+}
+  
+message UpdateDeviceRequest {
+    Device device = 1;
+}
+  
+message UpdateDeviceResponse {
+    string success = 1;
+}
+  
+message DeleteDeviceRequest {
+    string device_id = 1;
+}
+  
+message DeleteDeviceResponse {
+    string success = 1;
+}
+  
+message ControlRequest {
+    ControlCommand command = 1;
+}
+  
+  message ControlResponse {
+    string success = 1;
+}

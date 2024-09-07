@@ -1,0 +1,400 @@
+definitions:
+  models.ForbiddenError:
+    properties:
+      message:
+        type: string
+    type: object
+  models.StandartError:
+    properties:
+      error: {}
+    type: object
+  proto.AddDeviceRequestSwag:
+    properties:
+      device:
+        $ref: '#/definitions/proto.SwagDevice'
+    type: object
+  proto.BrightnessCommandPayload:
+    properties:
+      brightness:
+        type: integer
+      color:
+        type: string
+    type: object
+  proto.Configuration:
+    properties:
+      brightness:
+        type: integer
+      color:
+        type: string
+    type: object
+  proto.ControlCommand:
+    properties:
+      command_id:
+        type: string
+      command_payload:
+        $ref: '#/definitions/proto.BrightnessCommandPayload'
+      command_type:
+        type: string
+      device_id:
+        type: string
+      device_status:
+        type: string
+      timestamp:
+        type: string
+      user_id:
+        type: string
+    type: object
+  proto.ControlRequest:
+    properties:
+      command:
+        $ref: '#/definitions/proto.ControlCommand'
+    type: object
+  proto.DeleteDeviceRequest:
+    properties:
+      device_id:
+        type: string
+    type: object
+  proto.LoginRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  proto.Profile:
+    properties:
+      address:
+        type: string
+      name:
+        type: string
+    type: object
+  proto.SwagDevice:
+    properties:
+      configuration:
+        $ref: '#/definitions/proto.Configuration'
+      connectivity_status:
+        type: string
+      device_name:
+        type: string
+      device_status:
+        type: string
+      device_type:
+        type: string
+      firmware_version:
+        type: string
+      location:
+        type: string
+      token:
+        type: string
+    type: object
+  proto.UpdateDeviceRequestSwag:
+    properties:
+      device:
+        $ref: '#/definitions/proto.UpdateSwagDevice'
+    type: object
+  proto.UpdateSwagDevice:
+    properties:
+      configuration:
+        $ref: '#/definitions/proto.Configuration'
+      connectivity_status:
+        type: string
+      device_id:
+        type: string
+      device_name:
+        type: string
+      device_status:
+        type: string
+      device_type:
+        type: string
+      firmware_version:
+        type: string
+      location:
+        type: string
+    type: object
+  proto.UserSwag:
+    properties:
+      email:
+        type: string
+      password_hash:
+        type: string
+      profile:
+        $ref: '#/definitions/proto.Profile'
+      username:
+        type: string
+    type: object
+host: localhost:9000
+info:
+  contact: {}
+  description: This swagger UI was created for Exam
+  title: 'Project: SMART HOME CONTROL SYSTEM'
+  version: "1.0"
+paths:
+  /control:
+    post:
+      consumes:
+      - application/json
+      description: Bu endpoint qurulmani boshqarish uchun ishlatiladi
+      parameters:
+      - description: ControlRequest
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/proto.ControlRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Commad sccessfully created
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+        "403":
+          description: Forbidden error
+          schema:
+            $ref: '#/definitions/models.ForbiddenError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+      security:
+      - BearerAuth: []
+      summary: Create control
+      tags:
+      - Device
+  /devices:
+    post:
+      consumes:
+      - application/json
+      description: Bu endpoint yangi qurulma qo'shish uchun ishlatiladi
+      parameters:
+      - description: AddDeviceRequestSwag
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/proto.AddDeviceRequestSwag'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Device successfully added
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+        "403":
+          description: Forbidden error
+          schema:
+            $ref: '#/definitions/models.ForbiddenError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+      security:
+      - BearerAuth: []
+      summary: Add Devices
+      tags:
+      - Device
+  /devices/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Bu endpoint qurulmani o'chirish uchun ishlatiladi
+      parameters:
+      - description: DeleteDeviceRequest
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/proto.DeleteDeviceRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Device successfully deleted
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+        "403":
+          description: Forbidden error
+          schema:
+            $ref: '#/definitions/models.ForbiddenError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+      security:
+      - BearerAuth: []
+      summary: Add Devices
+      tags:
+      - Device
+  /devices/update:
+    put:
+      consumes:
+      - application/json
+      description: Bu endpoint qurulmani yangilash uchun ishlatiladi
+      parameters:
+      - description: UpdateDeviceRequestSwag
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/proto.UpdateDeviceRequestSwag'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Device successfully updated
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+        "403":
+          description: Forbidden error
+          schema:
+            $ref: '#/definitions/models.ForbiddenError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+      security:
+      - BearerAuth: []
+      summary: Add Devices
+      tags:
+      - Device
+  /user/login:
+    post:
+      consumes:
+      - application/json
+      description: Bu endpoint foydalanuvchi profilini olish uchun ishlatiladi
+      parameters:
+      - description: LoginRequest
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/proto.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Login successful
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+        "403":
+          description: Forbidden error
+          schema:
+            $ref: '#/definitions/models.ForbiddenError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+      security:
+      - BearerAuth: []
+      summary: LOGIN User
+      tags:
+      - User
+  /user/profile:
+    get:
+      consumes:
+      - application/json
+      description: Bu endpoint foydalanuvchi profilini olish uchun ishlatiladi
+      parameters:
+      - description: 'Token: '
+        in: query
+        name: token
+        required: true
+        type: string
+      - description: 'User ID: '
+        in: query
+        name: user_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+        "403":
+          description: Forbidden error
+          schema:
+            $ref: '#/definitions/models.ForbiddenError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+      security:
+      - BearerAuth: []
+      summary: PROFILE User
+      tags:
+      - User
+  /user/register:
+    post:
+      consumes:
+      - application/json
+      description: Bu endpoint yangi foydalanuvchini yaratish uchun ishlatiladi
+      parameters:
+      - description: UserSwag
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/proto.UserSwag'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: User successfully created
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+        "403":
+          description: Forbidden error
+          schema:
+            $ref: '#/definitions/models.ForbiddenError'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/models.StandartError'
+      security:
+      - BearerAuth: []
+      summary: CREATE User
+      tags:
+      - User
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

@@ -1,0 +1,19 @@
+2024/08/01 09:36:26 AddDevice INFO: Successfully created device and cashed
+2024/08/01 09:36:51 INFO: update success: true
+2024/08/01 09:37:22 INFO: update success: true
+2024/08/01 09:38:04 INFO: update success: true
+2024/08/01 09:38:43 INFO: update success: true
+2024/08/01 09:41:31 INFO: update success: true
+2024/08/01 13:20:42 UpdateDevice ERROR: mongo: no documents in result
+2024/08/01 13:21:12 UpdateDevice ERROR: mongo: no documents in result
+2024/08/01 13:21:52 UpdateDevice ERROR: mongo: no documents in result
+2024/08/01 13:27:44 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 13:28:34 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 13:29:09 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 14:14:39 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 14:15:39 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 14:16:36 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 14:23:28 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 14:31:46 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 15:32:52 UpdateDevice ERROR: Bunday DeviceID topilamdi mongo: no documents in result
+2024/08/01 15:33:02 Successfully update device
